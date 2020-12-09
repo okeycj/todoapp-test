@@ -161,7 +161,7 @@ function Home() {
                                         <option>30 minute</option>
                                         <option>60 minute</option>
                                     </select>
-                                    Notes: <input type="text" onKeyPress={(e) => handleSubmit(e, 'monday')} /><button onClick={() => deleteForm(f)}>-</button>
+                                    Notes: <input placeholder="Write a Note and Click Enter to Save" type="text" onKeyPress={(e) => handleSubmit(e, 'monday')} /> <button onClick={() => deleteForm(f)}>-</button>
                                 </div>)
                                 
                             }
@@ -213,7 +213,7 @@ function Home() {
                                         <option>30 minute</option>
                                         <option>60 minute</option>
                                     </select>
-                                    Notes: <input type="text" onKeyPress={(e) => handleSubmit(e, 'tuesday')} /> <button onClick={() => deleteForm(f)}>-</button>
+                                    Notes: <input placeholder="Write a Note and Click Enter to Save" type="text" onKeyPress={(e) => handleSubmit(e, 'tuesday')} /> <button onClick={() => deleteForm(f)}>-</button>
                                 </div>)
                             }
                         })
@@ -264,7 +264,7 @@ function Home() {
                                         <option>30 minute</option>
                                         <option>60 minute</option>
                                     </select>
-                                    Notes: <input type="text" onKeyPress={(e) => handleSubmit(e, 'wednesday')} /><button onClick={() => deleteForm(f)}>-</button>
+                                    Notes: <input placeholder="Write a Note and Click Enter to Save" type="text" onKeyPress={(e) => handleSubmit(e, 'wednesday')} /> <button onClick={() => deleteForm(f)}>-</button>
                                 </div>)
                             }
                         })
@@ -315,7 +315,7 @@ function Home() {
                                         <option>30 minute</option>
                                         <option>60 minute</option>
                                     </select>
-                                    Notes: <input type="text" onKeyPress={(e) => handleSubmit(e, 'thursday')} /><button onClick={() => deleteForm(f)}>-</button>
+                                    Notes: <input placeholder="Write a Note and Click Enter to Save" type="text" onKeyPress={(e) => handleSubmit(e, 'thursday')} /> <button onClick={() => deleteForm(f)}>-</button>
                                 </div>)
                                 
                             }
@@ -367,7 +367,7 @@ function Home() {
                                         <option>30 minute</option>
                                         <option>60 minute</option>
                                     </select>
-                                    Notes: <input type="text" onKeyPress={(e) => handleSubmit(e, 'friday')} /><button onClick={() => deleteForm(f)}>-</button>
+                                    Notes: <input placeholder="Write a Note and Click Enter to Save" type="text" onKeyPress={(e) => handleSubmit(e, 'friday')} /> <button onClick={() => deleteForm(f)}>-</button>
                                 </div>)
                             }
                         })
@@ -418,7 +418,7 @@ function Home() {
                                         <option>30 minute</option>
                                         <option>60 minute</option>
                                     </select>
-                                    Notes: <input type="text" onKeyPress={(e) => handleSubmit(e, 'saturday')} /><button onClick={() => deleteForm(f)}>-</button>
+                                    Notes: <input type="text" placeholder="Write a Note and Click Enter to Save" onKeyPress={(e) => handleSubmit(e, 'saturday')} /> <button onClick={() => deleteForm(f)}>-</button>
                                 </div>)
                             }
                         })
@@ -469,7 +469,7 @@ function Home() {
                                         <option>30 minute</option>
                                         <option>60 minute</option>
                                     </select>
-                                    Notes: <input type="text" onKeyPress={(e) => handleSubmit(e, 'sunday')} /><button onClick={() => deleteForm(f)}>-</button>
+                                    Notes: <input type="text" placeholder="Write a Note and Click Enter to Save" onKeyPress={(e) => handleSubmit(e, 'sunday')} /> <button onClick={() => deleteForm(f)}>-</button>
                                 </div>)
                             }
                         })
