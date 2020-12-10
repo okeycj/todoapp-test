@@ -495,7 +495,7 @@ function Home() {
                 {total_duration >= 0 && (
                     `${total_duration/1440 >= 1 ? Math.floor(total_duration/1440) : 0}
                     day(s)
-                    ${total_duration/60 >= 1 ? Math.floor(total_duration / 60) : 0} 
+                    ${total_duration/60 >= 1 && total_duration/60 < 24 ? Math.floor(total_duration / 60) : 0} 
                     hour(s) and 
                     ${total_duration % 60 !== 0 ? total_duration % 60 : 0} 
                     minute(s)`
