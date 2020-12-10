@@ -31,13 +31,14 @@ function Home() {
     // localstore = JSON.parse(localStorage.getItem('todos'));
 
     const addForm = (day) => {
-        const document = [...form, {index: Math.random(), day: day}]
+        const document = [...form, {index: Math.random(), day: day, duration: 0}]
         setForm(document)
     }
     
     const deleteForm = (f) => {
       const array = form.filter((fm) => fm.index !== f.index);
-      setForm(array)
+      setForm(array);
+      totalDuration()
     }
     
     const handleMonday = () => {
@@ -72,9 +73,17 @@ function Home() {
       const value = e.target.value
       setPeriod(value)
     }
-    const handleDuration = (e) => {
+    const handleDuration = (e, fm) => {
       const value = e.target.value
       setDuration(value)
+      for (let i = 0; i < form.length; i++) {
+          const element = form[i];
+          if (element.index == fm.index) {
+            fm.duration = Number(value.split(' ')[0])
+            form[i] = fm
+          }
+        }
+        totalDuration()
     }
     const handleSubmit = (event, day) => {
         if (event.key === 'Enter') {
@@ -112,6 +121,11 @@ function Home() {
                     total_duration = total_duration+Number(d.split(' ')[0])
                 }
             }
+        }
+        for (let i = 0; i < form.length; i++) {
+            const element = form[i];
+            total_duration = total_duration+element.duration
+            
         }
         // console.log('total_duration',total_duration)
         setTotalduration(total_duration)
@@ -156,7 +170,7 @@ function Home() {
                                         <option>PM</option>
                                     </select>
                                     Duration:
-                                    <select onChange={(e) => handleDuration(e)}>
+                                    <select onChange={(e) => handleDuration(e, f)}>
                                         <option>Choose Duration</option>
                                         <option>30 minute</option>
                                         <option>60 minute</option>
@@ -208,7 +222,7 @@ function Home() {
                                         <option>PM</option>
                                     </select>
                                     Duration:
-                                    <select onChange={(e) => handleDuration(e)}>
+                                    <select onChange={(e) => handleDuration(e, f)}>
                                         <option>Choose Duration</option>
                                         <option>30 minute</option>
                                         <option>60 minute</option>
@@ -259,7 +273,7 @@ function Home() {
                                         <option>PM</option>
                                     </select>
                                     Duration:
-                                    <select onChange={(e) => handleDuration(e)}>
+                                    <select onChange={(e) => handleDuration(e, f)}>
                                         <option>Choose Duration</option>
                                         <option>30 minute</option>
                                         <option>60 minute</option>
@@ -310,7 +324,7 @@ function Home() {
                                         <option>PM</option>
                                     </select>
                                     Duration:
-                                    <select onChange={(e) => {handleDuration(e)}}>
+                                    <select onChange={(e) => {handleDuration(e, f)}}>
                                         <option>Choose Duration</option>
                                         <option>30 minute</option>
                                         <option>60 minute</option>
@@ -362,7 +376,7 @@ function Home() {
                                         <option>PM</option>
                                     </select>
                                     Duration:
-                                    <select onChange={(e) => handleDuration(e)}>
+                                    <select onChange={(e) => handleDuration(e, f)}>
                                         <option>Choose Duration</option>
                                         <option>30 minute</option>
                                         <option>60 minute</option>
@@ -413,7 +427,7 @@ function Home() {
                                         <option>PM</option>
                                     </select>
                                     Duration:
-                                    <select onChange={(e) => handleDuration(e)}>
+                                    <select onChange={(e) => handleDuration(e, f)}>
                                         <option>Choose Duration</option>
                                         <option>30 minute</option>
                                         <option>60 minute</option>
@@ -464,7 +478,7 @@ function Home() {
                                         <option>PM</option>
                                     </select>
                                     Duration:
-                                    <select onChange={(e) => handleDuration(e)}>
+                                    <select onChange={(e) => handleDuration(e, f)}>
                                         <option>Choose Duration</option>
                                         <option>30 minute</option>
                                         <option>60 minute</option>
